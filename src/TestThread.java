@@ -5,9 +5,9 @@ public class TestThread extends Thread{
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
-public void run () {
+public synchronized void run () {
 	for(int i=0 ; i < 20 ; i++) {
-		System.out.println();
+		System.out.println(this.getName());
 	}
 }
 	public static void main(String[] args) {
@@ -17,6 +17,11 @@ public void run () {
 		TestThread t4 = new TestThread("4----");
 		TestThread t5 = new TestThread("5-----");
 
+		t1.start();
+		t5.start();
+		t4.start();
+		t2.start();
+		t3.start();
 	}
 
 }
