@@ -30,10 +30,12 @@ public class ThreadTime {
     	while(true) {
 	      try {
 	        Thread.sleep(delai);
-	        System.out.println(df.format(new Date()));
+
+	        System.out.print(df.format(new Date()));//+ "\n\n\n\n\n\n\n\n\n\n\n\n"
 	        for(int i=0; i<8;i++) {
 	        	System.out.println();
 	        }
+
 	      } catch (InterruptedException e) {
 	        e.printStackTrace();
 	      }
