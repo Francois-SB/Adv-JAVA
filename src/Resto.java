@@ -12,6 +12,7 @@ import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 public class Resto {
 static String[] ENTREE= {"entrée", "Salade", "Soupe", "quiche", "aucune"};
@@ -68,7 +69,7 @@ static String[] DESSERTS= {"desserts", "tarye maison", "mousse au chocolat", "ti
 		effacerMenu(monFichier);//efface le fichier
 		scan.close();
 	}
-	public static void effacerMenu (String monfichier) {
+	public static void effacerMenu (String monfichier) {//TODO or test throws IOException (without try catch)
 		try {
 			BufferedReader freader =  new BufferedReader(new FileReader(monfichier));
 			BufferedWriter fwriter =  new BufferedWriter(new FileWriter(monfichier));
@@ -81,7 +82,7 @@ static String[] DESSERTS= {"desserts", "tarye maison", "mousse au chocolat", "ti
 			freader.close();
 			fwriter.close();
 		}
-		catch (Exception e) {
+		catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
@@ -105,7 +106,7 @@ static String[] DESSERTS= {"desserts", "tarye maison", "mousse au chocolat", "ti
 			fichier.write("\n\n");
 			fichier.close();
 		}
-		catch (Exception e) {
+		catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
@@ -119,7 +120,7 @@ static String[] DESSERTS= {"desserts", "tarye maison", "mousse au chocolat", "ti
 			
 			fichier.close();
 		}
-		catch (Exception e) {
+		catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

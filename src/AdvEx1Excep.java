@@ -7,16 +7,19 @@ public class AdvEx1Excep {
 		Date date = null;
 		Date today = new Date();
 		
-//		try {
-//			System.out.println(date.getClass().getName());
-//		} catch (DateTimeException e) {
-//			throw new DateTimeException("null error date");
-//		}
-
+		try {
+			System.out.println(date.getClass().getName());
+		} catch (DateTimeException e) {
+			throw new DateTimeException("null error date");
+		}
+		finally {
+			
+		
 		try {
 			System.out.println(today.getClass().getName());
 		} catch (DateTimeException e) {
 			throw new DateTimeException("You shall not pass");
+		}
 		}
 	}
 
